@@ -8,7 +8,7 @@ on:
 
 jobs:
   create-release:
-    if: ${{ github.event.pull_request.merged == true && startsWith(github.head_ref, 'release/') && github.repository_owner == 'codecov' }}
+    if: ${{ github.event.pull_request.merged == true && startsWith(github.head_ref, 'release/') }}
     name: Create Github Release
     runs-on: ubuntu-latest
     steps:
