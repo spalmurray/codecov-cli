@@ -30,6 +30,8 @@ jobs:
       - name: Update version and push
         id: make-commit
         run: |
+          git config --global user.email "spencer.murray@sentry.io"
+          git config --global user.name "Spencer Murray"
           sed -i 's/version\ =\ "[0-9]\+\.[0-9]\+\.[0-9]\+"/version\ =\ "${{ github.event.inputs.versionName }}"/g' pyproject.toml
           git add pyproject.toml
           # git commit -S --message "Prepare release ${{ github.event.inputs.versionName }}"
